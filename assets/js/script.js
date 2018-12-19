@@ -27,3 +27,20 @@ function GetAllTarefas(){
 	  }
 	});
 }
+
+$(function(){
+	$('#btn-post').click(function(){
+		var complete = false;
+		if ($("#inputCompleted").prop("checked")){
+			var complete = true;
+		}
+		var  data = {
+			name: $("#inputName").val(),
+			description : $("#inputDescription").val(),
+			limit_time :  $("#inputLimit").val(),
+			priority : $("#inputPriority").val(),
+			completed : complete
+		};
+		PostTarefa(data);
+	});
+});
