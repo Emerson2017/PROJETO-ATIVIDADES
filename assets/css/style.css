@@ -13,3 +13,55 @@ header{
 	font-family: "times";
 
 }
+
+section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+
+section input{
+	margin-top: 15px;
+}
+
+#container-geral{
+	height: 80%;
+	width: 100% !important;
+}
+
+#container-tarefas{
+	overflow:auto;
+	width: 70%;
+	height: 100%;
+}
+
+.tarefa{
+	border-style: solid;
+	border-color: grey;
+	margin-top:10px;
+	height: 20%;
+	width: 98%;
+}
+
+.nome-tarefa{
+	margin-left: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 50%;
+}
+
+.ML5{
+	margin-left: 5px;
+}
+
+.criacao{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 10px;
+}
+
