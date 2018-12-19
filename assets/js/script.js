@@ -1,17 +1,15 @@
 $(document).ready(function(){
-	GetAllAtividades();
+	GetAllTarefas();
 });
 
-function GetAllAtividades(){
+
+function GetAllTarefas(){
 	$URL =  "API/public/"	
 	  $.ajax({
 	  method: "GET",
-	  url: $URL + "atividade",
-	  dataType: "text",
+	  url: $URL + "tarefa",
+	  dataType: "JSON",
 	  success: function(data) {
-	  	console.log(data);
-	  }	
-	}
-
-	);
+		ShowTarefas(data);
+	  }});
 }
