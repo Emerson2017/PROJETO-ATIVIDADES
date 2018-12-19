@@ -14,6 +14,25 @@ function GetAllTarefas(){
 	  }});
 }
 
+function ShowTarefas(data){
+	var tarefas = data;
+
+	tarefas.forEach(function(value, index){
+		$("#container-tarefas").append(`
+			<div class="tarefa">
+				<div class="nome-tarefa">
+					<h5>TAREFA: </h5>
+					<p class="ML5">`+value.name+`</p>
+				</div>
+				<div class="criacao">
+					<h5>CRIADA EM: </h5>
+					<p class="ML5">`+value.created_at+`</p>
+				</div>
+			</div>
+			`);
+	})
+}
+
 
  function PostTarefa(data){
 	$URL =  "API/public/";
