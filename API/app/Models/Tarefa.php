@@ -20,6 +20,11 @@ class Tarefa extends Model
 		$tarefa->completed = true;
 		$tarefa->save();
 		return response("Registro criado com Sucesso!", 200);
+    }
 
+    public function deleteTarefa($id){
+		$tarefa = self::find($id);
+		$tarefa->delete();
+		return response("Registro deletado com sucesso!", 200);
     }
 }
