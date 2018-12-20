@@ -2,23 +2,42 @@ html, body{
 	height: 100%;
 }
 
-header{
+h5,p{
+	margin-bottom: 0 !important;
+}
+
+.header{
 	width: 100%;
 	height: auto;
+	display: flex !important;
+	justify-content: center !important;
+	margin-top: 3%;
+	background-color: #C0C0C0;
+}
+
+header div{
+	width: 70% !important;
+	height: 100% !important;
+	display: flex;
 }
 
 .header div h2{
-	width: auto  !important;
-	text-align: center;
-	font-family: "times";
+	width: 80%;
+	font-family: "Oswald";
+	font-size: 35px;
+	text-align: left;
+	margin:0px;
+}
 
+#new-tarefa{
+	/*margin-left: 100% !important;*/
 }
 
 section{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: center !important;
 
 }
 
@@ -30,17 +49,19 @@ section input{
 #container-geral{
 	height: 80%;
 	width: 100% !important;
+	margin-top: 10%;
 }
 
 #container-tarefas{
 	overflow:auto;
-	width: 70%;
+	width: 60%;
 	height: 100%;
 }
 
 .tarefa{
 	border-style: solid;
 	border-color: grey;
+	font-family: "Oswald";
 	margin-top:10px;
 	height: 20%;
 	width: 98%;
@@ -48,20 +69,67 @@ section input{
 
 .nome-tarefa{
 	margin-left: 10px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	width: 50%;
+	margin-top: 10px;
+	width: 100% !important;
+}
+
+.nome-tarefa h5{
+	margin-bottom: 0px;
 }
 
 .ML5{
 	margin-left: 5px;
+	margin-bottom: 0px;
 }
 
 .criacao{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
 	margin-left: 10px;
+	margin-top: 30px;
+	width: 100%;
+}
+
+.criacao h5{
+	font-size: 1em;
+	margin-bottom: 0px;
+	color: black;
+}
+
+.flex-row{
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+}
+
+.tarefa-id{
+	margin-left: 10px;
+	width: auto;
+	height: auto;
+}
+
+.subtarefa{
+	width: 50% !important;
+	height: 100%;
+}
+
+.subtarefa2{
+	width: 50% !important;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.row-reverse{
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.container-buttons{
+	margin-top: 25px;
+	margin-right: 10px;
+}
+
+.container-buttons button{
+	margin-right: 10px;
+	font-size: 12px;
 }
 
