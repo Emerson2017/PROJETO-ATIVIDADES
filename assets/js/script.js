@@ -86,3 +86,29 @@ $(function(){
 		$('#modalCadastro').modal('hide');
 	});
 });
+
+
+ function DeleteTarefa(id){
+	$URL =  "API/public/tarefa/delete/"+id;
+
+	  $.ajax({
+	  method: "POST",
+	  url: $URL,
+	  dataType:  "JSON",
+	  success: function(){
+	  },
+	  error: function(data){
+		console.log(data);
+	  },
+	  complete: function(){
+		location.reload();
+	  }
+	});
+}
+
+$(function(){
+	$('body').on('click', '.btn-delete', function(){
+		var id = $(this).attr('href');
+		DeleteTarefa(id);
+	});
+});
