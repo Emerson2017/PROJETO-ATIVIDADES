@@ -16,17 +16,31 @@ function GetAllTarefas(){
 
 function ShowTarefas(data){
 	var tarefas = data;
-
 	tarefas.forEach(function(value, index){
 		$("#container-tarefas").append(`
-			<div class="tarefa">
-				<div class="nome-tarefa">
-					<h5>TAREFA: </h5>
-					<p class="ML5">`+value.name+`</p>
+			<div class="tarefa flex-row">
+				<div class="subtarefa">
+					<div class="nome-tarefa flex-row">
+						<h5>TAREFA: </h5>
+						<p class="ML5">`+value.name+`</p>
+					</div>
+					<div class="criacao flex-row">
+						<h5><strong>CRIADA EM:</strong></h5>
+						<p class="ML5">`+value.created_at+`</p>
+					</div>
 				</div>
-				<div class="criacao">
-					<h5>CRIADA EM: </h5>
-					<p class="ML5">`+value.created_at+`</p>
+
+
+				<div class="subtarefa2">
+					<div class="row-reverse">
+						<p>`+value.priority+`</p>
+					</div>
+
+					<div class="container-buttons row-reverse">
+						<button href="`+value.id+`" type="button" class="btn btn-danger btn-delete">EXCLUIR</button>
+						<button class="btn btn-info">VER</button>
+						<button class="btn btn-success">EDITAR</button>
+					</div>
 				</div>
 			</div>
 			`);
@@ -39,9 +53,17 @@ function ShowTarefas(data){
 	  $.ajax({
 	  method: "POST",
 	  url: $URL + "tarefa",
-	  dataType:  "JSON",
+	  dataType:  "text",
 	  data: data,
-	  success: function(data) {
+	  success: function(){
+		// tratamento caso a requisição seja sucesso
+	  },
+	  error: function(data){
+		console.log(data);
+		// tratamento do erro e apresentação
+	  },
+	  complete: function(){
+		$("#container-tarefas").html('');
 		GetAllTarefas();
 	  }
 	});
@@ -61,5 +83,6 @@ $(function(){
 			completed : complete
 		};
 		PostTarefa(data);
+		$('#modalCadastro').modal('hide');
 	});
 });
