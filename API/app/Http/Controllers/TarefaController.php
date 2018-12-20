@@ -20,4 +20,8 @@ class TarefaController extends Controller
 	public function saveTarefa(Request $request){
 		return $this->tarefa->saveTarefa($request);
 	}
+
+	public function deleteTarefa($id){
+		return $this->tarefa->deleteTarefa($id);
+	}
 }
