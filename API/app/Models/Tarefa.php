@@ -32,4 +32,26 @@ class Tarefa extends Model
 		return $tarefa = self::find($id);
     }
 
+
+    public function editTarefa($id, $request){
+		$newTarefa = $request->all();
+		$tarefa  = self::find($id);
+
+		if(!$tarefa){
+			return response("Tarefa não encontrada", 400);
+		}
+
+		if($newTarefa['completed'] == "true"){
+			$newTarefa['completed'] = true;
+		}else{
+			$newTarefa['completed']  = false;
+		}
+
+		$tarefa->fill($newTarefa);
+		$tarefa->completed = $newTarefa['completed'];
+		$tarefa->save();
+		return response($tarefa, 200);
+
+    }
+
 }
