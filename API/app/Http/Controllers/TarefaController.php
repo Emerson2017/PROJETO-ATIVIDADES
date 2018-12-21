@@ -32,4 +32,8 @@ class TarefaController extends Controller
 	public  function editTarefa($id, Request $request){
 		return $this->tarefa->editTarefa($id, $request);
 	}
+
+	public function allPrioritys(){
+		return $this->tarefa->allPrioritys();
+	}
 }
