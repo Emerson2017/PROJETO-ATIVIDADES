@@ -16,12 +16,12 @@ OBS: A SEGUINTE APLICAÇÃO FOI CONSTRUÍDA UTILIZANDO O SERVIDOR LOCAL APACHE E
 
 6º NO ARQUIVO .env (procurar com atalho ctrl + p no sublime caso não seja visível) NO CAMINHO "PROJETO-ATIVIDADES/API/.env" setar as seguintes configurações :
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=tarefas
-DB_USERNAME=root
-DB_PASSWORD=
+DB_CONNECTION=mysql<br>
+DB_HOST=127.0.0.1<br>
+DB_PORT=3306<br>
+DB_DATABASE=tarefas<br>
+DB_USERNAME=root<br>
+DB_PASSWORD=<br>
 
 
 7º RODAR COMANDO "php artisan key:generate" NO CAMINHO "PROJETO-ATIVIDADES/API"
