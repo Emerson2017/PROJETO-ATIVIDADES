@@ -8,11 +8,8 @@
 		<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="assets/js/script.js"></script>
 
-		<!-- font OSWALD -->
-		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-
 		<!-- BOOTSTRAP -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	</head>
 
 	<body>
@@ -51,7 +48,7 @@
 							<option value="" disabled selected>Selecione uma prioridade</option>
 							<option value="MUITO ALTA">MUITO ALTA</option>
 							<option value="ALTA">ALTA</option>
-							<option value="MÉDIA">MÉDIA</option>
+							<option value="MEDIA">MEDIA</option>
 							<option value="BAIXA">BAIXA</option>
 						</select>
 					</div>
@@ -112,16 +109,16 @@
 
 					</div>
 					<div class="form-group">
-						<label for="inputLimit">Prazo: </label>
+						<label class="label-edit-prazo" for="inputLimit">Prazo: <p id="error-prazo"></p></label>
 						<input type="date" name="limit_time" placeholder="prazo" class="form-control" required="required" id="prazo-edit">
 					</div>
 					<div class="form-group">
-						<label for="inputPriority">Prioridade: </label>
+						<label class="label-edit-error" for="inputPriority">Prioridade: <p id="error-prioridade"></p></label>
 						<select name="" class="form-control" required="required"  id="priority-edit">
 							<option value="" disabled selected>Selecione uma prioridade</option>
 							<option value="MUITO ALTA">MUITO ALTA</option>
 							<option value="ALTA">ALTA</option>
-							<option value="MÉDIA">MÉDIA</option>
+							<option value="MEDIA">MEDIA</option>
 							<option value="BAIXA">BAIXA</option>
 						</select>
 					</div>
@@ -132,14 +129,13 @@
 
 					<div  class="form-group">
 						<label for="inputCompleted">STATUS</label>
-						<select name="" class="form-control" required="required" id="edit-Completed">
-							<option value="" disabled selected>STATUS DA TAREFA</option>
+						<select class="form-control" required="required" id="edit-Completed">
 							<option value="0">EM ANDAMENTO</option>
 							<option value="1">CONCLUÍDA</option>
 						</select>
 					</div>
 					<div class="modal-footer">
-						<input type="submit" class="btn btn-primary" id="btn-edit" data-id="" value="ATUALIZAR"/>
+						<input type="submit" class="btn btn-primary" id="btn-edit" data-id="" data-status="" value="ATUALIZAR"/>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					</div>
 				</form>
@@ -155,8 +151,10 @@
 		</section>
 
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<!-- POPPER JS -->
+		<script src="assets/js/popper.min.js"></script>
 
+		<!-- BOOTSTRAP JS -->
+		<script src="assets/js/bootstrap.min.js"></script>
 	</body>
 </html>
