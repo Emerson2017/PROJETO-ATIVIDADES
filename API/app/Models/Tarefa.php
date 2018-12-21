@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use DB;
 class Tarefa extends Model
 {
 	protected $fillable = ['name', 'description', 'limit_time', 'priority', 'completed'];
@@ -51,7 +51,11 @@ class Tarefa extends Model
 		$tarefa->completed = $newTarefa['completed'];
 		$tarefa->save();
 		return response($tarefa, 200);
+    }
 
+    public function allPrioritys(){
+		$prioritys = DB::table('tarefas')->select('priority','completed')->get();;
+		return $prioritys;
     }
 
 }
