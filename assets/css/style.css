@@ -3,6 +3,11 @@ html, body{
 	font-family: "Oswald";
 }
 
+@font-face {
+  font-family:"Oswald";
+  src: url("../fonts/Oswald-Regular.ttf") format("truetype");
+}
+
 h1,h2, h3, h4, h5, h6{
 	font-family: "Oswald" !important;
 }
@@ -198,4 +203,27 @@ form{
 .modal-body{
 	display: flex !important;
 	justify-content: center  !important;
+}
+
+#error-prazo{
+	text-align: left;
+	font-family: "Oswald";
+	font-size: 12px;
+	color: red;
+	margin-left: 260px;
+}
+
+#error-prioridade{
+	text-align: left;
+	font-family: "Oswald";
+	font-size: 12px;
+	color: red;
+	margin-left: 50px;
+}
+
+.label-edit-error{
+	width: 100% !important;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
