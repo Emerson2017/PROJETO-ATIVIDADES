@@ -17,7 +17,7 @@ class Tarefa extends Model
 		$data = $request->all();
 		$tarefa = new Tarefa();
 		$tarefa->fill($data);
-		$tarefa->completed = true;
+		$tarefa->completed = false;
 		$tarefa->save();
 		return response("Registro criado com Sucesso!", 200);
     }
@@ -27,4 +27,9 @@ class Tarefa extends Model
 		$tarefa->delete();
 		return response("Registro deletado com sucesso!", 200);
     }
+
+    public function getTarefa($id){
+		return $tarefa = self::find($id);
+    }
+
 }
