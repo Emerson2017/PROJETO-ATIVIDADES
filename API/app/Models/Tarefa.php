@@ -10,7 +10,14 @@ class Tarefa extends Model
 
 
     public function allTarefas(){
-		return self::all();
+		$tarefas = self::all();
+		if($tarefas->isEmpty()){
+			return response("Não existem tarefas cadastradas", 204);
+		}else{
+			return $tarefas;
+		}
+
+
     }
 
     public function saveTarefa($request){
