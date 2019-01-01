@@ -13,7 +13,19 @@ function inputArray(data){
 
 
 function ShowContentEmpty(){
-	$('#container-tarefas').html('NÃO EXISTEM TAREFAS CADASTRADAS ! CADASTRE AGORA MESMO.');
+	$('#container-tarefas').append(`
+		<div id="content-empty">
+			<p>NO MOMENTO NÃO EXISTEM TAREFAS CADASTRADAS.</p>
+			<img id="empty-tarefa" src="assets/img/empty-tarefa.png">
+		</div>
+
+		`);
+
+	$('#container-tarefas').css({
+		"display": "flex",
+		"align-items": "center",
+		"justify-content": "center"
+	});
 }
 
 function GetAllTarefas(){
@@ -94,6 +106,9 @@ function verifyPriority(prioridade){
 
 function ShowTarefas(data){
 	var tarefas = data;
+	$('#container-tarefas').css({
+		"display": "block"
+	});
 	tarefas.forEach(function(value, index){
 		var status = null;
 		value.completed ? status = "Concluída" : status = "Em Andamento";
@@ -143,6 +158,7 @@ function ShowTarefas(data){
 	  },
 	  complete: function(){
 		$("#container-tarefas").html('');
+		console.log("teste");
 		GetAllTarefas();
 		arrPrioritys = [];
 		getAllPrioritys();
