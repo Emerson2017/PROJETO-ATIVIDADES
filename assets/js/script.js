@@ -11,14 +11,27 @@ function inputArray(data){
 	});
 }
 
+
+function ShowContentEmpty(){
+	$('#container-tarefas').html('NÃO EXISTEM TAREFAS CADASTRADAS ! CADASTRE AGORA MESMO.');
+}
+
 function GetAllTarefas(){
 	$URL =  "API/public/";
 	  $.ajax({
 	  method: "GET",
 	  url: $URL + "tarefa",
 	  dataType: "JSON",
-	  success: function(data) {
-		ShowTarefas(data);
+
+	  success: function(data,textStatus,xhr){
+		if(xhr.status == "204"){
+			ShowContentEmpty();
+		}else if(xhr.status == "200"){
+			ShowTarefas(data);
+		}
+	   },
+	  error: function(data){
+
 	  }});
 }
 
